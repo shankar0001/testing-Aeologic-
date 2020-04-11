@@ -1,3 +1,4 @@
+package Spice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -5,11 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Login {
 
-	public static void main(String[] args) {
+	
+	public static void Log() {
+		
 		System.setProperty("webdriver.chrome.driver", "/home/aeologic/Downloads/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		//driver.get("http://dev.thespicetag.com/login");
 		driver.get("http://qa.thespicetag.com/login");
+		driver.manage().window().maximize();
 		
 		WebElement userid = driver.findElement(By.xpath("//input[@placeholder=\"User ID\"]"));
 		WebElement password= driver.findElement(By.xpath("//input[@placeholder=\"Password\"]"));
@@ -20,9 +24,11 @@ public class Login {
 		button.click();
 		
 		
+	}
+	public static void main(String[] args) {
 		
-		
-		
+		Login l = new Login();
+		Login.Log();
 
 	}
 
